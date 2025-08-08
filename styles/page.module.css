@@ -1,0 +1,8 @@
+.main {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+  background: radial-gradient(1200px 800px at 50% 10%, #0f160f 0%, #0b0d0b 45%, #090c09 100%);
+  color: #e7f5ea;
+}
