@@ -147,7 +147,7 @@ export default function TerminalOverlay({ current }: Props) {
         <div className={styles.dot} style={{ backgroundColor: "#ff5f56" }} />
         <div className={styles.dot} style={{ backgroundColor: "#ffbd2e" }} />
         <div className={styles.dot} style={{ backgroundColor: "#27c93f" }} />
-        <div className={styles.title}>Floating Code Blocks Universe — {current}</div>
+        <div className={styles.title}>Basit Bilal Channa — {current}</div>
       </div>
       <div className={styles.body} ref={containerRef}>
         <div className={styles.bob}>

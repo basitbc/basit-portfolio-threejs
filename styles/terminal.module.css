@@ -1,7 +1,15 @@
 @keyframes floatY {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-6px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .terminal {
@@ -56,9 +64,11 @@
   flex: 1;
   padding: 12px 14px;
   color: #97f39a;
-  font-size: 15px; /* larger font */
+  font-size: 15px;
+  /* larger font */
   line-height: 1.55;
-  overflow: auto; /* ensure scroll works */
+  overflow: auto;
+  /* ensure scroll works */
   scrollbar-width: thin;
   scrollbar-color: #204d25 transparent;
 }
@@ -67,7 +77,10 @@
   animation: floatY 8s ease-in-out infinite;
 }
 
-.body::-webkit-scrollbar { width: 8px; }
+.body::-webkit-scrollbar {
+  width: 8px;
+}
+
 .body::-webkit-scrollbar-thumb {
   background-color: #204d25;
   border-radius: 10px;
@@ -78,6 +91,7 @@
   grid-template-columns: 1fr;
   gap: 12px;
 }
+
 .large .contentWrap {
   grid-template-columns: 1.3fr 0.7fr;
 }
@@ -90,44 +104,104 @@
   transform: translateY(8px);
   animation: fadeInLine .28s ease forwards;
 }
+
 @keyframes fadeInLine {
-  to { opacity: 1; transform: translateY(0); }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.cmdLine { font-size: 14px; }
-.cmd { color: #72ff9b; opacity: 0.9; font-weight: 600; margin-right: 6px; }
-.cmdValue { color: #bff7c8; }
+.cmdLine {
+  font-size: 14px;
+}
 
-.key { color: #bdeece; font-weight: 600; }
-.sep { color: #6bd08f; opacity: 0.8; }
-.value { color: #e8fff0; }
+.cmd {
+  color: #72ff9b;
+  opacity: 0.9;
+  font-weight: 600;
+  margin-right: 6px;
+}
 
-.bullet { display: flex; align-items: baseline; gap: 8px; }
-.bulletDot { color: #6bd08f; font-size: 18px; line-height: 1; margin-top: -2px; }
+.cmdValue {
+  color: #bff7c8;
+}
+
+.key {
+  color: #bdeece;
+  font-weight: 600;
+}
+
+.sep {
+  color: #6bd08f;
+  opacity: 0.8;
+}
+
+.value {
+  color: #e8fff0;
+}
+
+.bullet {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.bulletDot {
+  color: #6bd08f;
+  font-size: 18px;
+  line-height: 1;
+  margin-top: -2px;
+}
+
+/* Add spacing between different sections/skills */
+.line:has(+ .line:not(.bullet)) {
+  margin-bottom: 6px;
+}
+
+/* Alternative approach - add spacing to key-value pairs for skills */
+.line:not(.bullet):not(.cmdLine) {
+  margin-bottom: 4px;
+}
+
 
 .portraitWrap {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .portrait {
   width: 100%;
   max-width: 300px;
   height: auto;
   border-radius: 12px;
   border: 1px solid #1f3b27;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
 }
 
 @media (max-width: 680px) {
   .terminal {
-    top: 62%;
-    height: 56vh; /* taller so both text and image fit; still scrollable */
+    top: 50%;
+    height: 65vh;
+    /* taller so both text and image fit; still scrollable */
   }
+
   .large .contentWrap {
-    grid-template-columns: 1fr; /* stack */
+    grid-template-columns: 1fr;
+    /* stack */
   }
-  .lines { order: 1; }
-  .portraitWrap { order: 2; }
-  .portrait { max-width: 220px; }
+
+  .lines {
+    order: 2;
+  }
+
+  .portraitWrap {
+    order: 1;
+  }
+
+  .portrait {
+    max-width: 220px;
+  }
 }
